@@ -1,3 +1,5 @@
+// Basic way of creating a image
+
 #include<iostream>
 #include<fstream>
 
@@ -13,6 +15,13 @@ int main(){
     image << "500 500" << endl; // width and height
     image << "255" << endl; // max color value
 
+     // Looping through all pixels of the image in y and x axis
+    for(int y = 0; y < 500; y++){
+      for(int x = 0; x < 500; x++){
+        image << (x * y) % 255 << " " << x << " " << (x + y) % 255 << " "; // place pixel info
+      }
+      image << endl;
+    }
   }
 
   image.close(); // close the file
